@@ -1,0 +1,3 @@
+7 * * * * /bin/sh /app/run.sh "/app/data/setup_done" >> /var/log/cron.log 2>&1
+
+
