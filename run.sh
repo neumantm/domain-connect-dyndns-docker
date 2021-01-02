@@ -1,8 +1,8 @@
 #!/bin/sh
 
-if [ -e "$1" ] ;then
-  domain-connect-dyndns update --domain "$DOMAIN"
+if [ -e setup_done ] ;then
+  /usr/local/bin/domain-connect-dyndns update --domain "$DOMAIN"
 else
-  domain-connect-dyndns setup --domain "$DOMAIN"
-  touch "$1"
+  /usr/local/bin/domain-connect-dyndns setup --domain "$DOMAIN"
+  touch setup_done
 fi

@@ -11,8 +11,8 @@ RUN chmod 0644 /etc/cron.d/update-cron
 RUN crontab /etc/cron.d/update-cron
 RUN touch /var/log/cron.log
 
-WORKDIR /app
+WORKDIR /app/data
+ENV DOMAIN "example.com"
+VOLUME /app/data
 
-ENTRYPOINT ["/bin/sh"]
-
-CMD ["-c" "cron && tail -f /var/log/cron.log"]
+CMD cron && tail -f /var/log/cron.log
