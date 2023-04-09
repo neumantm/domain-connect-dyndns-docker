@@ -1,4 +1,4 @@
-FROM python:3.7
+FROM python:3.11
 
 RUN apt-get update && apt-get -y install -qq --force-yes cron
 RUN pip install domain-connect-dyndns
