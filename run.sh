@@ -7,5 +7,11 @@ if ! [ -e setup_done ] ;then
   echo "Setup done"
 fi
 
-echo "Starting cron"
-cron && tail -f /var/log/cron.log
+echo "Starting infinite loop"
+
+while true ; do
+  echo "Running update script"
+  /bin/sh /app/update.sh
+  echo "Sleeping for 3600 seconds"
+  sleep 3600
+done
