@@ -27,7 +27,7 @@ jobs:
         with:
           push: true
           tags: neumantm/domain-connect-dyndns:latest
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       -
         name: Update repo description
         uses: peter-evans/dockerhub-description@v4
